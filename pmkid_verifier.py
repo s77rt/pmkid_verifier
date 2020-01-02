@@ -19,7 +19,7 @@ def verify_pmkid(pmkid, essid, mac_ap, mac_sta, passphrase, hashcat_format=False
 	if hashcat_format:
 		computed_pmkid = computed_pmkid+'*'+mac_ap+'*'+mac_sta+'*'+str(essid.encode().hex())
 	# Compare:
-	if computed_pmkid == pmkid.lower():
+	if computed_pmkid == str(pmkid).lower():
 		return True
 	return False
 
